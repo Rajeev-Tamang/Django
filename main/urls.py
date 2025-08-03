@@ -7,4 +7,5 @@ urlpatterns = [
     path('about/', about),
     path('task/', task),
     path('task/create/',createTask),
+    # path('student_profile/PP.jpg', pic),
 ]

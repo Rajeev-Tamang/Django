@@ -1,5 +1,17 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render , redirect
+from django.http import HttpResponse 
+from .models import Task
+# tasks =[
+#             {
+#                 "title": "This is our task1 title",
+#                  "des": "This is task1 des"
+#             },
+#             {
+#                 "title": "This is our task 2 title", 
+#                 "des" : "This is the task 2 desc"
+#             }
+#         ]
+
 
 def home(request):
     # print("This is a home page")
@@ -16,23 +28,37 @@ def about(request):
     return render(request, "main/about.html",context)
 
 def task(request):
-    task =[
-            {
-                "title": "This is our task1 title",
-                 "des": "This is task1 des"
-            },
-            {
-                "title": "This is our task 2 title", 
-                "des" : "This is the task 2 desc"
-            }
-        ]
-    
+    # task =[
+    #             {
+    #                 "title": "This is our task1 title",
+    #                 "des": "This is task1 des"
+    #             },
+    #             {
+    #                 "title": "This is our task 2 title", 
+    #                 "des" : "This is the task 2 desc"
+    #             }
+    #         ]
+    # global tasks
+    tasks=Task.objects.all()    
     context = {
        
-        "task" : task  
+        "task" : tasks  
        
     }
     return render(request,"main/task.html",context)
 
 def createTask(request):
+    if request.method=="POST":
+        data = request.POST
+        task_title = data.get("title")
+        task_decs = data.get("des")
+        # new_task= {"title":task_title, "des":task_decs}
+        # global tasks
+        # tasks.append(new_task)
+        Task.objects.create(title=task_title,des=task_decs)
+
+        return redirect(task)
     return render(request,"main/create_task.html")
+
+# def pic(request):
+#     redirect ("/media/student_profile")
