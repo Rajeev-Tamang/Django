@@ -21,10 +21,17 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('main.urls')),
-    path('about/', include("main.urls")),
-    path('task/', include("main.urls")),
-    path('task/create/', include("main.urls")),
-    # path('student_profile/PP.jpg', include("main.urls")),
+    path('', include('main.urls')),  # Only include once
+    # Remove all the other includes
+
+    # path('admin/', admin.site.urls),
+    # path('', include('main.urls')),
+    # path('about/', include("main.urls")),
+    # path('test', include('main.urls')),
+    # path('create', include("main.urls")),
+    # path('task/', include("main.urls")),
+    # path('task/create/', include("main.urls")),
+    # path('SchoolViews/', include("main.urls")),
+    # # path('student_profile/PP.jpg', include("main.urls")),
          
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

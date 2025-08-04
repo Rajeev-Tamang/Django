@@ -1,0 +1,14 @@
+
+
+
+<a href="{% url 'create' %}">Create_School</a>
+
+{% for school in object_list %}
+<ul>
+    <li>
+        <a href="{% url 'SchoolDetail' school.id %}">{{school.name}}</a> |
+        <a href="{% url 'update' school.id %}">Update_School</a> |
+        <a href="{% url 'delete' school.id %}">Delete_School</a>
+    </li>
+</ul>
+{% endfor %}

@@ -1,6 +1,8 @@
 from django.shortcuts import render , redirect
 from django.http import HttpResponse 
-from .models import Task
+from .models import Task,School
+from django.views.generic import ListView, DetailView, CreateView, DeleteView , UpdateView
+from django.urls import reverse_lazy
 # tasks =[
 #             {
 #                 "title": "This is our task1 title",
@@ -62,3 +64,28 @@ def createTask(request):
 
 # def pic(request):
 #     redirect ("/media/student_profile")
+
+# def school_details(request, school_id):
+#     print ("school_detaile page", school_id
+#            )
+    
+class test(ListView):
+    model = School 
+
+
+class test_view(DetailView):
+    model = School
+
+class create(CreateView):
+    model = School
+    fields = "__all__"
+    success_url= reverse_lazy("SchoolList")
+
+class delete(DeleteView):
+    model=School
+    success_url=reverse_lazy("SchoolList")
+
+class update(UpdateView):
+    model=School
+    fields="__all__"
+    success_url=reverse_lazy("SchoolList")
