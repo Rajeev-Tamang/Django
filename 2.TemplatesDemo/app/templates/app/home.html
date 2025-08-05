@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+<h1>  Welcom to the Home Page.</h1>    
+<p>To display the variable we use double curly braces here {{variable}}</p>
+
+<br>
+
+<!-- calling from dict  -->
+
+{{users.first_name}}
+{{users.last_name}}
+
+<br>
+
+<!-- calling from list -->
+{{users_intrests.0}}
+
+<br>
+
+{{demo_obj.value}}
+
+<br>
+
+{%for x in users_intrests%}
+    {{forloop.counter}}
+    {{x}}
+{%endfor%}
+
+<hr>
+
+{%for x, y in users.items%}
+{{x}}:{{y}}
+<br>
+{%endfor%}
+</body>
+</html>
