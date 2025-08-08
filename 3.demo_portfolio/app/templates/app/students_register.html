@@ -1,0 +1,47 @@
+
+<!-- pull base html from base.html -->
+{% extends 'base.html' %}
+
+<!-- Title of the page -->
+{% block title %}Students Register{% endblock %}
+
+<!-- Crete Content of the page  -->
+{% block content %}
+
+
+<main class="flex-grow p-6 overflow-auto ">
+    <h1 class="text-3xl font-bold mb-6">Students Register</h1>
+    <form  class="" method="post">
+        {% csrf_token %}
+        <fieldset class="fieldset">
+            <legend class="fieldset-legend">First Name</legend>
+            <input type="text" class="input" placeholder="Eg.Rajeev" name="first_name" />
+            </fieldset>
+
+
+
+            <fieldset class="fieldset">
+            <legend class="fieldset-legend">Last Name</legend>
+            <input type="text" class="input" placeholder="Eg. Tamang" name="last_name" />
+            </fieldset>
+
+
+            <fieldset class="fieldset">
+            <legend class="fieldset-legend">Address</legend>
+            <input type="text" class="input" placeholder="Eg. Kathmandu" name="address"/>
+            </fieldset>
+
+            
+            <fieldset class="fieldset">
+            <legend class="fieldset-legend">Phone Number</legend>
+            <input type="text" maxlength="10" class="input" placeholder="Eg. 98********" name="phone_number" />
+            </fieldset>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+</main>
+
+
+{% endblock %}
+
