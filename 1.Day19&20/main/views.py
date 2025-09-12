@@ -1,6 +1,9 @@
 from django.shortcuts import render,redirect
 from .models import Task,School
-from django.views.generic import ListView,DetailView
+from django.views.generic import ListView,DetailView,CreateView,DeleteView,UpdateView
+from django.urls import reverse_lazy
+
+
 task=[
     {"title":"CCNA", "desc":"Cisco certifie Network Asso"},
     {"title":"CCNP", "desc":"Cisco Certification Network Professional"}
@@ -36,3 +39,17 @@ class SchoolView(ListView):
 
 class school_detail(DetailView):
     model=School
+
+class school_create(CreateView):
+    model=School
+    fields="__all__"
+    success_url=reverse_lazy("school")
+
+class School_Update(UpdateView):
+    model=School
+    fields="__all__"
+    success_url=reverse_lazy("school")
+
+class School_Delete(DeleteView):
+    model=School
+    success_url=reverse_lazy("school")  

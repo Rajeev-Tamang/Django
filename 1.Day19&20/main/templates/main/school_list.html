@@ -1,3 +1,11 @@
 {% for xcool in object_list %}
-<h1>{{ xcool.name }}</h1><br>
+<li>
+    <ul>
+        <a href="{% url 'school_detail' xcool.id %}">{{ xcool.name }}</a>|
+        <a href="{% url 'school_update' xcool.id %}">Update_School</a>|
+        <a href="{% url 'school_delete' xcool.id %}">Delete_School</a>
+    </ul>
+</li>
 {% endfor %}
+<h3><a href="{% url 'school_create' %}">Create_School</a></h3>
+

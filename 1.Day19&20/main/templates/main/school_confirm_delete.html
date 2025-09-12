@@ -1,0 +1,6 @@
+<h1>Are you Sure You want to delete?</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <button>Yes</button>
+    <a href="{% url 'school' %}">No, Return to List</a>
+</form>
