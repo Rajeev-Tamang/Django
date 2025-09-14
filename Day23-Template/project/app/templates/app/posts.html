@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for datas in data %}
+    <h1>{{datas.title}}</h1>
+        {% if user == "rajeev" %}
+        <a href="">Edit</a>
+        <a href="">Delete</a>
+        {% elif user == "jeshis" %}
+        <a href="">Commet</a>
+        <a href="">Share</a>
+        {% else %}
+        <a href="">react</a>
+        <a href="">comment</a>
+        {% endif %}
+    <h2>{{datas.wish}}</h2>
+    {% for tags in datas.tags %}
+    <p>{{tags|upper}}</p>
+    {% endfor %}
+    <hr>
+    {% endfor %}
+
+</body>
+</html>

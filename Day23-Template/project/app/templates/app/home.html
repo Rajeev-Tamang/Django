@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- To Access the dictionay we use dicti[key] but in template we use dot operator, dicti.key -->
+    {{cuser.firstName}}
+    {{cuser.lastName}}
+
+    <hr>
+    {% comment %}
+        {% for i in cuser %}
+        {% endfor %}
+    {% endcomment %}
+
+    <hr>
+    <!-- We access list like listname[1] bt here we use dot operator listname.1 -->
+     {{Certificates.0}}
+     {{Certificates.1}}
+     {{Certificates.2}}
+    <hr>    
+     <!-- Accessing object -->
+    {{demo_obj.value}}
+<hr>
+    {% for i,j in cuser.items %}
+    {{i}}:{{j}}
+    {% endfor %}
+
+    {% for i in Certificates %}
+    {{forloop.counter}}
+    {{i}}
+    {% endfor %}
+
+</body>
+</html>
