@@ -1,4 +1,4 @@
-#Day24 Tailwind CSS
+# Day24 Tailwind CSS
 
 - Install Tailwind
 
@@ -33,6 +33,7 @@ _______________________________________________________________
 - use that context in html page
 
 ---------------------------------------------------------
+
 #  Pratice OrM in Shell/address is model/class name
 
 ## get all data
@@ -52,4 +53,3 @@ _______________________________________________________________
 
 ktm=address.objects.get(pk=1) 
 ktm
-
