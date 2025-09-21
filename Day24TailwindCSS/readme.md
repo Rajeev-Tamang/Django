@@ -38,18 +38,35 @@ _______________________________________________________________
 
 ## get all data
 
-- address = address.objects.all() 
+- address = address.objects.all() &#8629; <!-- ↵ -->
+- address &#8629; <!-- ↵ -->
+
 ## Add new data in DB
 
-- new_address=Address(name="Biratnagar")
-- new_address
-- new_address.save()
+- new_address=Address(name="Biratnagar") &#8629; <!-- ↵ -->
+- new_address &#8629; <!-- ↵ -->
+- new_address.save() &#8629; <!-- ↵ -->
+- verify in DB
 
 ## Add new data in DB in sinlge step 
 
-- address.objects.create("Chitwan)
+- address.objects.create("Chitwan) &#8629; <!-- ↵ -->
 
 ## Access via PK or ID
 
-ktm=address.objects.get(pk=1) 
-ktm
+- ktm=address.objects.get(pk=1)/(id=1) &#8629; <!-- ↵ -->
+- ktm &#8629; <!-- ↵ -->
+
+## Get first and last item.
+
+- new_address=address.object.get(last) &#8629; <!-- ↵ -->
+- new_address &#8629; <!-- ↵ -->
+
+## Update in DB
+
+- ktm = address.object.get(last) &#8629; <!-- ↵ -->
+- ktm &#8629; <!-- ↵ -->
+- ktm.name = "New Kathmandu" &#8629; <!-- ↵ -->
+- ktm.save()
+
+
