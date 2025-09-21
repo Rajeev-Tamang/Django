@@ -6,9 +6,32 @@
 {% block content %}
 <main class="flex-grow p-6 overflow-auto">
     <h1 class="text-3xl font-bold mb-6">Student Register</h1>
-    <form class="w-1/2" action="" method="post">
+    <form class="w-1/2 flex flex-col gap-4" action="" method="post">
         {% csrf_token %}
-        {{form}}
+        <!-- {{ form}} -->
+        <!-- {{form.first_name.label}}
+        {{form.first_name}} -->
+<!-- 
+        {% for field in form %}
+            {{field.label}}
+            {{field}}
+        {% endfor %} -->
+
+
+        {% for field in form %}
+            <fieldset class="fieldset">
+                <legend class="fieldset-legend font-bold text-lg">{{field.label}}</legend>
+                {{field}}
+                <!-- <p class="label">
+                    {% if field.errors %}
+                        {% for error in field.errors %}
+                            {{error}}
+                        {% endfor %}
+                    {% endif %}
+                </p> -->
+                {{field.errors}}
+        </fieldset>
+        {% endfor %} 
         <button class="btn btn-primary">Submit</button>
     </form>
 </main>

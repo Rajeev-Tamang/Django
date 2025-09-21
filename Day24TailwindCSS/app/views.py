@@ -1,6 +1,5 @@
 from django.shortcuts import render,redirect
-from .forms import Studentregistration
-
+from .forms import Studentregistration,studentReg
 # Create your views here.
 
 def dashboard(request):
@@ -47,8 +46,7 @@ def dashboard(request):
     }
         
     return render(request, "app/dashboard.html", context)
-
-# def register(request):
+#def register(request):
 #     print(f"...........{request.method}...........")
 #     if request.method == 'POST':
 #         print(f"-----{request.POST}-------") 
@@ -91,16 +89,41 @@ def dashboard(request):
 #             print(errors)
 #         return redirect ("dashboard")
 #     return render(request, "app/register.html") 
+# def register(request):
+    # if request.method == 'POST':
+    #     first_name=request.POST.get('first_name')
+    #     last_name=request.POST.get('last_name')
+    #     address=request.POST.get('address')
+    #     phone=request.POST.get('phone')
+    #     print('name: ',first_name,last_name)
+    #     print('adress: ',address)
+    #     print('phone: ',phone)
+    #     form = Studentregistration(request.POST)
+    #     if not form.is_valid():
+    #         context={
+    #             'form':form
+    #         }
+    #         return render(request,'app/register.html',context)
+    #     return redirect('dashboard')
+
+    # form = Studentregistration()
+    # context={
+    #     'form':form
+    # }
+    # return render(request,'app/register.html',context)
+
+
 def register(request):
     if request.method == 'POST':
         first_name=request.POST.get('first_name')
         last_name=request.POST.get('last_name')
-        address=request.POST.get('address')
+        email=request.POST.get('email')
         phone=request.POST.get('phone')
+        address=request.POST.get('address')
         print('name: ',first_name,last_name)
         print('adress: ',address)
         print('phone: ',phone)
-        form = Studentregistration(request.POST)
+        form = studentReg(request.POST)
         if not form.is_valid():
             context={
                 'form':form
@@ -108,7 +131,7 @@ def register(request):
             return render(request,'app/register.html',context)
         return redirect('dashboard')
 
-    form = Studentregistration()
+    form = studentReg()
     context={
         'form':form
     }
