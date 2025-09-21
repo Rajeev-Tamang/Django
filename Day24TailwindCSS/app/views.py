@@ -129,6 +129,7 @@ def register(request):
                 'form':form
             }
             return render(request,'app/register.html',context)
+        form.save() #save the user
         return redirect('dashboard')
 
     form = studentReg()
