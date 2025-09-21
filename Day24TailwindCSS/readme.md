@@ -31,3 +31,25 @@ _______________________________________________________________
 - use wigits and cleaning 
 - use that form in views 
 - use that context in html page
+
+---------------------------------------------------------
+#  Pratice OrM in Shell/address is model/class name
+
+## get all data
+
+- address = address.objects.all() 
+## Add new data in DB
+
+- new_address=Address(name="Biratnagar")
+- new_address
+- new_address.save()
+
+## Add new data in DB in sinlge step 
+
+- address.objects.create("Chitwan)
+
+## Access via PK or ID
+
+ktm=address.objects.get(pk=1) 
+ktm
+
