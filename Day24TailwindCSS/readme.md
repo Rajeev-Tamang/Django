@@ -23,3 +23,11 @@ _______________________________________________________________
 - import form of form.py
 - use it/call the class form=studentregistartion()
 - use validation/cleaning method 
+
+----------------------------------------------------------
+
+- create modeles in model.py 
+- use that in forms.py with forms.modelform 
+- use wigits and cleaning 
+- use that form in views 
+- use that context in html page
